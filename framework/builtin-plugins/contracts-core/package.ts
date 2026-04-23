@@ -72,9 +72,52 @@ export default definePackage({
       "packageId": "traceability-core",
       "class": "required",
       "rationale": "Required for Contracts Core to keep its boundary governed and explicit."
+    },
+    {
+      "packageId": "accounting-core",
+      "class": "optional",
+      "rationale": "Recommended with Contracts Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "subscriptions-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Contracts Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "business-portals-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Contracts Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "analytics-bi-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Contracts Core with deeper downstream automation, visibility, or workflow coverage."
     }
   ],
-  "optionalWith": [],
+  "recommendedPlugins": [
+    "accounting-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "subscriptions-core",
+    "business-portals-core",
+    "analytics-bi-core"
+  ],
+  "integrationOnlyPlugins": [],
+  "suggestedPacks": [
+    "sector-education",
+    "sector-epc-professional-delivery",
+    "sector-financial-services-compliance",
+    "sector-healthcare",
+    "sector-nonprofit",
+    "sector-professional-services"
+  ],
+  "standaloneSupported": true,
+  "installNotes": [
+    "Contracts are most useful when they enrich commercial demand, service entitlements, or recurring billing rather than standing alone."
+  ],
+  "optionalWith": [
+    "accounting-core"
+  ],
   "conflictsWith": [],
   "providesCapabilities": [
     "contracts.registry",

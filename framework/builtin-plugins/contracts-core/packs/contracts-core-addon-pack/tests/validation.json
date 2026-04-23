@@ -1,6 +1,34 @@
 {
   "packageId": "contracts-core",
   "packName": "contracts-core-addon-pack",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core",
+    "party-relationships-core",
+    "sales-core",
+    "support-service-core",
+    "traceability-core"
+  ],
+  "recommendedPlugins": [
+    "accounting-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "subscriptions-core",
+    "business-portals-core",
+    "analytics-bi-core"
+  ],
+  "integrationOnlyPlugins": [],
+  "suggestedPacks": [
+    "sector-education",
+    "sector-epc-professional-delivery",
+    "sector-financial-services-compliance",
+    "sector-healthcare",
+    "sector-nonprofit",
+    "sector-professional-services"
+  ],
   "expectedActions": [
     "contracts.registry.create",
     "contracts.entitlements.activate",
