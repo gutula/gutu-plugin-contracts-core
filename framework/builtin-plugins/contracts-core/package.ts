@@ -97,7 +97,11 @@ export default definePackage({
   "publicCommands": [
     "contracts.registry.create",
     "contracts.entitlements.activate",
-    "contracts.billing-schedules.publish"
+    "contracts.billing-schedules.publish",
+    "contracts.registry.hold",
+    "contracts.registry.release",
+    "contracts.registry.amend",
+    "contracts.registry.reverse"
   ],
   "publicQueries": [
     "contracts.registry-summary",

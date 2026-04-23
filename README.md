@@ -26,7 +26,7 @@ Contract register, commercial or service entitlements, renewal posture, and gove
 
 Owns long-running agreement, entitlement, and billing-schedule truth so recurring or governed commercial commitments stay explicit.
 
-- Exports 3 governed actions: `contracts.registry.create`, `contracts.entitlements.activate`, `contracts.billing-schedules.publish`.
+- Exports 7 governed actions: `contracts.registry.create`, `contracts.entitlements.activate`, `contracts.billing-schedules.publish`, `contracts.registry.hold`, `contracts.registry.release`, `contracts.registry.amend`, `contracts.registry.reverse`.
 - Owns 3 resource contracts: `contracts.registry`, `contracts.entitlements`, `contracts.billing-schedules`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -71,7 +71,7 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 
 | Surface | Count | Details |
 | --- | --- | --- |
-| Actions | 3 | `contracts.registry.create`, `contracts.entitlements.activate`, `contracts.billing-schedules.publish` |
+| Actions | 7 | `contracts.registry.create`, `contracts.entitlements.activate`, `contracts.billing-schedules.publish`, `contracts.registry.hold`, `contracts.registry.release`, `contracts.registry.amend`, `contracts.registry.reverse` |
 | Resources | 3 | `contracts.registry`, `contracts.entitlements`, `contracts.billing-schedules` |
 | Jobs | 2 | `contracts.projections.refresh`, `contracts.reconciliation.run` |
 | Workflows | 1 | `contracts-lifecycle` |
@@ -96,10 +96,10 @@ bun run docs:check
 ```
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/contracts-core";
+import { manifest, createContractAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/contracts-core";
 
 console.log(manifest.id);
-console.log(createPrimaryRecordAction.id);
+console.log(createContractAction.id);
 console.log(BusinessPrimaryResource.id);
 ```
 

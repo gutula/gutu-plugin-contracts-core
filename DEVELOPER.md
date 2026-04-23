@@ -71,6 +71,10 @@ Owns long-running agreement, entitlement, and billing-schedule truth so recurrin
 | Action | `contracts.registry.create` | Permission: `contracts.registry.write` | Create Contract<br>Idempotent<br>Audited |
 | Action | `contracts.entitlements.activate` | Permission: `contracts.entitlements.write` | Activate Entitlement<br>Non-idempotent<br>Audited |
 | Action | `contracts.billing-schedules.publish` | Permission: `contracts.billing-schedules.write` | Publish Billing Schedule<br>Non-idempotent<br>Audited |
+| Action | `contracts.registry.hold` | Permission: `contracts.registry.write` | Place Record On Hold<br>Non-idempotent<br>Audited |
+| Action | `contracts.registry.release` | Permission: `contracts.registry.write` | Release Record Hold<br>Non-idempotent<br>Audited |
+| Action | `contracts.registry.amend` | Permission: `contracts.registry.write` | Amend Record<br>Non-idempotent<br>Audited |
+| Action | `contracts.registry.reverse` | Permission: `contracts.registry.write` | Reverse Record<br>Non-idempotent<br>Audited |
 | Resource | `contracts.registry` | Portal disabled | Contract headers, commercial terms, and amendment-safe lifecycle records.<br>Purpose: Own agreement truth without burying long-running commitments inside orders or tickets.<br>Admin auto-CRUD enabled<br>Fields: `title`, `recordState`, `approvalState`, `postingState`, `fulfillmentState`, `updatedAt` |
 | Resource | `contracts.entitlements` | Portal disabled | Entitlement and coverage records tied to live agreements.<br>Purpose: Make service and commercial rights explicit before downstream execution occurs.<br>Admin auto-CRUD enabled<br>Fields: `label`, `status`, `requestedAction`, `updatedAt` |
 | Resource | `contracts.billing-schedules` | Portal disabled | Recurring and milestone billing schedule records derived from governed contracts.<br>Purpose: Request downstream financial work without letting agreements mutate accounting truth directly.<br>Admin auto-CRUD enabled<br>Fields: `severity`, `status`, `reasonCode`, `updatedAt` |
@@ -156,11 +160,11 @@ stateDiagram-v2
 ### 1. Host wiring
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/contracts-core";
+import { manifest, createContractAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/contracts-core";
 
 export const pluginSurface = {
   manifest,
-  createPrimaryRecordAction,
+  createContractAction,
   BusinessPrimaryResource,
   jobDefinitions,
   workflowDefinitions,
@@ -174,10 +178,10 @@ Use this pattern when your host needs to register the plugin’s declared export
 ### 2. Action-first orchestration
 
 ```ts
-import { manifest, createPrimaryRecordAction } from "@plugins/contracts-core";
+import { manifest, createContractAction } from "@plugins/contracts-core";
 
 console.log("plugin", manifest.id);
-console.log("action", createPrimaryRecordAction.id);
+console.log("action", createContractAction.id);
 ```
 
 - Prefer action IDs as the stable integration boundary.
@@ -219,7 +223,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current truth
 
-- Exports 3 governed actions: `contracts.registry.create`, `contracts.entitlements.activate`, `contracts.billing-schedules.publish`.
+- Exports 7 governed actions: `contracts.registry.create`, `contracts.entitlements.activate`, `contracts.billing-schedules.publish`, `contracts.registry.hold`, `contracts.registry.release`, `contracts.registry.amend`, `contracts.registry.reverse`.
 - Owns 3 resource contracts: `contracts.registry`, `contracts.entitlements`, `contracts.billing-schedules`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -233,7 +237,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No extra gaps were discovered beyond the plugin’s declared boundaries.
 
 ### Recommended next
 

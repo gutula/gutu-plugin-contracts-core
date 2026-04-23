@@ -9,6 +9,10 @@
 | contracts.registry.create | Create Contract |
 | contracts.entitlements.activate | Activate Entitlement |
 | contracts.billing-schedules.publish | Publish Billing Schedule |
+| contracts.registry.hold | Place Record On Hold |
+| contracts.registry.release | Release Record Hold |
+| contracts.registry.amend | Amend Record |
+| contracts.registry.reverse | Reverse Record |
 | contracts.projections.refresh | Job definition queued on `contracts-projections`. |
 | contracts.reconciliation.run | Job definition queued on `contracts-reconciliation`. |
 | contracts-lifecycle | Draft, approve, activate, renew, amend, bill, and close long-running agreements. |

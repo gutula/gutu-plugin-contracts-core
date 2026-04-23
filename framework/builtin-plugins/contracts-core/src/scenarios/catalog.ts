@@ -6,7 +6,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "contracts.registry.create",
       "contracts.entitlements.activate",
-      "contracts.billing-schedules.publish"
+      "contracts.billing-schedules.publish",
+      "contracts.registry.hold",
+      "contracts.registry.release",
+      "contracts.registry.amend",
+      "contracts.registry.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -26,7 +30,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "contracts.registry.create",
       "contracts.entitlements.activate",
-      "contracts.billing-schedules.publish"
+      "contracts.billing-schedules.publish",
+      "contracts.registry.hold",
+      "contracts.registry.release",
+      "contracts.registry.amend",
+      "contracts.registry.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -46,7 +54,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "contracts.registry.create",
       "contracts.entitlements.activate",
-      "contracts.billing-schedules.publish"
+      "contracts.billing-schedules.publish",
+      "contracts.registry.hold",
+      "contracts.registry.release",
+      "contracts.registry.amend",
+      "contracts.registry.reverse"
     ],
     "downstreamTargets": {
       "create": [],
