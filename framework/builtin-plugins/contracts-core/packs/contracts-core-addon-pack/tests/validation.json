@@ -1,0 +1,24 @@
+{
+  "packageId": "contracts-core",
+  "packName": "contracts-core-addon-pack",
+  "expectedActions": [
+    "contracts.registry.create",
+    "contracts.entitlements.activate",
+    "contracts.billing-schedules.publish"
+  ],
+  "expectedResources": [
+    "contracts.registry",
+    "contracts.entitlements",
+    "contracts.billing-schedules"
+  ],
+  "expectedReports": [
+    "Contract Renewal Summary",
+    "Entitlement Coverage",
+    "Billing Schedule Forecast"
+  ],
+  "expectedExceptionQueues": [
+    "renewal-review",
+    "entitlement-conflict-review",
+    "contract-amendment-approval"
+  ]
+}

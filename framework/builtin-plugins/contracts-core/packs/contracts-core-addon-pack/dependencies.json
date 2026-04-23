@@ -1,0 +1,20 @@
+{
+  "plugin": "contracts-core",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core",
+    "party-relationships-core",
+    "sales-core",
+    "support-service-core",
+    "traceability-core"
+  ],
+  "requiredCapabilities": [
+    "ui.register.admin",
+    "api.rest.mount",
+    "data.write.contracts",
+    "events.publish.contracts"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "workspace": "contracts",
+  "route": "/admin/business/contracts",
+  "pageTitle": "Contracts Control Room",
+  "defaultRecordState": "draft",
+  "defaultApprovalState": "pending",
+  "defaultPostingState": "unposted",
+  "defaultFulfillmentState": "none"
+}

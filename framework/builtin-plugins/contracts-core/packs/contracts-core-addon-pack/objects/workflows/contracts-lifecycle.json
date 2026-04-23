@@ -1,0 +1,9 @@
+{
+  "workflowId": "contracts-lifecycle",
+  "actors": [
+    "commercial-owner",
+    "approver",
+    "controller"
+  ],
+  "description": "Draft, approve, activate, renew, amend, bill, and close long-running agreements."
+}

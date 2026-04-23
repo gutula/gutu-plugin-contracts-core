@@ -1,0 +1,10 @@
+{
+  "automationId": "contracts-core.reconciliation.default",
+  "trigger": "exception-record-opened",
+  "action": "contracts.reconciliation.run",
+  "queues": [
+    "renewal-review",
+    "entitlement-conflict-review",
+    "contract-amendment-approval"
+  ]
+}

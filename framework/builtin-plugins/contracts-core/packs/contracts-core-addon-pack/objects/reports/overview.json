@@ -1,0 +1,18 @@
+{
+  "pluginId": "contracts-core",
+  "reports": [
+    "Contract Renewal Summary",
+    "Entitlement Coverage",
+    "Billing Schedule Forecast"
+  ],
+  "exceptionQueues": [
+    "renewal-review",
+    "entitlement-conflict-review",
+    "contract-amendment-approval"
+  ],
+  "operationalScenarios": [
+    "contract-activation",
+    "schedule-publication",
+    "renewal-or-amendment"
+  ]
+}
