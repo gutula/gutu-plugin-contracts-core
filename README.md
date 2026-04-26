@@ -61,10 +61,10 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 | Manifest ID | `contracts-core` |
 | Repo | [gutu-plugin-contracts-core](https://github.com/gutula/gutu-plugin-contracts-core) |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `party-relationships-core`, `sales-core`, `support-service-core`, `traceability-core` |
-| Recommended Plugins | None |
-| Capability Enhancing | None |
+| Recommended Plugins | `accounting-core` |
+| Capability Enhancing | `subscriptions-core`, `business-portals-core`, `analytics-bi-core` |
 | Integration Only | None |
-| Suggested Packs | None |
+| Suggested Packs | `sector-education`, `sector-epc-professional-delivery`, `sector-financial-services-compliance`, `sector-healthcare`, `sector-nonprofit`, `sector-professional-services` |
 | Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.contracts`, `events.publish.contracts` |
 | Provided Capabilities | `contracts.registry`, `contracts.entitlements`, `contracts.billing-schedules` |
@@ -75,12 +75,12 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 ## Installation Guidance
 
 - Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `party-relationships-core`, `sales-core`, `support-service-core`, `traceability-core`
-- Recommended plugins: none
-- Capability-enhancing plugins: none
+- Recommended plugins: `accounting-core`
+- Capability-enhancing plugins: `subscriptions-core`, `business-portals-core`, `analytics-bi-core`
 - Integration-only plugins: none
-- Suggested packs: none
+- Suggested packs: `sector-education`, `sector-epc-professional-delivery`, `sector-financial-services-compliance`, `sector-healthcare`, `sector-nonprofit`, `sector-professional-services`
 - Standalone supported: yes
-
+- Contracts are most useful when they enrich commercial demand, service entitlements, or recurring billing rather than standing alone.
 
 ## Capability Matrix
 

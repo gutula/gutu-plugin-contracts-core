@@ -54,10 +54,10 @@ Owns long-running agreement, entitlement, and billing-schedule truth so recurrin
 | Field | Value |
 | --- | --- |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `party-relationships-core`, `sales-core`, `support-service-core`, `traceability-core` |
-| Recommended Plugins | None |
-| Capability Enhancing | None |
+| Recommended Plugins | `accounting-core` |
+| Capability Enhancing | `subscriptions-core`, `business-portals-core`, `analytics-bi-core` |
 | Integration Only | None |
-| Suggested Packs | None |
+| Suggested Packs | `sector-education`, `sector-epc-professional-delivery`, `sector-financial-services-compliance`, `sector-healthcare`, `sector-nonprofit`, `sector-professional-services` |
 | Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.contracts`, `events.publish.contracts` |
 | Provides Capabilities | `contracts.registry`, `contracts.entitlements`, `contracts.billing-schedules` |
